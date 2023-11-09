@@ -3,6 +3,7 @@ package com.example.homework19.EmployeeService;
 import com.example.homework19.Employee;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeService {
 
@@ -12,5 +13,5 @@ public interface EmployeeService {
 
     Employee checkEmployee(String firstName, String lastName);
 
-    List<Employee> getAll();
+    Map<Employee,Integer> getAll();
 }
