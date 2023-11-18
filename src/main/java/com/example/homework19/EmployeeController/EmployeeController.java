@@ -22,22 +22,22 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/add")
-    public Employee add(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName) {
-        return employeeService.addEmployee(firstName, lastName);
+    public Employee add(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+        return employeeService.addEmployee(firstName, lastName, salary, departament);
     }
 
     @GetMapping(path = "/delete")
-    public Employee delete(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName) {
-        return employeeService.deleteEmployee(firstName, lastName);
+    public Employee delete(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+        return employeeService.deleteEmployee(firstName, lastName, salary,departament);
     }
 
     @GetMapping(path = "/check")
-    public Employee check(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName) {
-        return employeeService.checkEmployee(firstName, lastName);
+    public Employee check(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+        return employeeService.checkEmployee(firstName, lastName, salary,departament);
     }
 
     @GetMapping
-    public Map<Employee,Integer> getAll() {
+    public Map<String,Employee> getAll() {
         return employeeService.getAll();
     }
 

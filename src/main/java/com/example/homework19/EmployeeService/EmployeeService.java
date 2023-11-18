@@ -7,11 +7,13 @@ import java.util.Map;
 
 public interface EmployeeService {
 
-    Employee addEmployee(String firstName, String lastName);
+    Employee addEmployee(String firstName, String lastName, Integer salary, Integer departament);
 
-    Employee deleteEmployee(String firstName, String lastName);
+    Employee deleteEmployee(String firstName, String lastName, Integer salary, Integer departament);
 
-    Employee checkEmployee(String firstName, String lastName);
+    Employee checkEmployee(String firstName, String lastName, Integer salary, Integer departament);
 
-    Map<Employee,Integer> getAll();
+
+
+    Map<String, Employee> getAll();
 }
