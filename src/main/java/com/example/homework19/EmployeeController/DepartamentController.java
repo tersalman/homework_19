@@ -6,10 +6,12 @@ import com.example.homework19.EmployeeService.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
 
+@RestController
 @RequestMapping(path = "departament")
 public class DepartamentController {
 
@@ -26,7 +28,7 @@ public class DepartamentController {
     Employee employeeInDepartamentWithMinSalary(@RequestParam("departament") Integer departament) {
         return departamentService.employeeInDepartamentWithMinSalary(departament);
     }
-    @GetMapping(path="/all")
+    @GetMapping(path="/all",params = "departament")
     List<Employee> getAllEmployeeByDepartament(@RequestParam("departament") Integer departament) {
         return departamentService.getAllEmployeeByDepartament(departament);
     }
