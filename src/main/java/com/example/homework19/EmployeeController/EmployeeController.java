@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Map;
 
 
@@ -18,26 +17,27 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
-        this.employeeService=employeeService;
+        this.employeeService = employeeService;
     }
 
     @GetMapping(path = "/add")
-    public Employee add(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+    public Employee add(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+
         return employeeService.addEmployee(firstName, lastName, salary, departament);
     }
 
     @GetMapping(path = "/delete")
-    public Employee delete(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
-        return employeeService.deleteEmployee(firstName, lastName, salary,departament);
+    public Employee delete(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+        return employeeService.deleteEmployee(firstName, lastName, salary, departament);
     }
 
     @GetMapping(path = "/check")
-    public Employee check(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
-        return employeeService.checkEmployee(firstName, lastName, salary,departament);
+    public Employee check(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("salary") Integer salary, @RequestParam("departament") Integer departament) {
+        return employeeService.checkEmployee(firstName, lastName, salary, departament);
     }
 
     @GetMapping
-    public Map<String,Employee> getAll() {
+    public Map<String, Employee> getAll() {
         return employeeService.getAll();
     }
 

@@ -1,5 +1,7 @@
 package com.example.homework19;
 
+import com.example.homework19.Exceptions.IlligalLetterException;
+import org.apache.commons.lang3.StringUtils;
 import java.util.Objects;
 
 
@@ -14,9 +16,18 @@ public class Employee {
 
 
 
+    private void checkForAllowedLetters(String str) {
+        if (!StringUtils.isAlpha(str)) {
+            throw new IlligalLetterException("don't write any nums or symbols");
+        }
+    }
+
+
     public Employee(String firstName, String lastName, Integer salary, Integer departament) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+        checkForAllowedLetters(firstName);
+        checkForAllowedLetters(lastName);
+    this.firstName = StringUtils.capitalize(firstName);
+    this.lastName = StringUtils.capitalize(lastName);
         this.salary = salary;
         this.departament = departament;
     }
