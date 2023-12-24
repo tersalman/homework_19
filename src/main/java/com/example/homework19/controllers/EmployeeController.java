@@ -1,8 +1,7 @@
-package com.example.homework19.EmployeeController;
+package com.example.homework19.controllers;
 
 import com.example.homework19.Employee;
-import com.example.homework19.EmployeeService.EmployeeService;
-import com.example.homework19.EmployeeService.EmployeeServiceImpl;
+import com.example.homework19.services.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

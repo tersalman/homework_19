@@ -81,5 +81,9 @@ public class Employee {
     public String fullName() {
         return firstName +" "+lastName;
     }
+
+    public void setDepartament(Integer departament) {
+        this.departament = departament;
+    }
 }
 

@@ -1,10 +1,9 @@
-package com.example.homework19.EmployeeService;
+package com.example.homework19.services;
 
 import com.example.homework19.Employee;
 import com.example.homework19.Exceptions.EmployeeAlreadyAddedException;
 import com.example.homework19.Exceptions.EmployeeNotFoundException;
-import com.example.homework19.Exceptions.IlligalLetterException;
-import org.apache.commons.lang3.StringUtils;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -16,6 +15,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final Map<String,Employee> employeeMap = new HashMap<>();
 
+
+    @PostConstruct
+    public void init(){
+        addEmployee("Ivan","Ivanov1",10000,1);
+        addEmployee("Ivan","Ivanov2",20000,1);
+        addEmployee("Ivan","Ivanov3",30000,1);
+
+    }
 
 
     @Override
@@ -54,6 +61,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Map<String,Employee> getAll() {
-        return new HashMap<>(employeeMap);
+        return employeeMap;
     }
 }
